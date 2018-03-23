@@ -8,7 +8,7 @@ class Main extends React.Component {
       //          top : '50%',
       //          left :'50%',
       //          transform :'translate(-50%,-50%)'
-      padding: '10%'
+      padding: '2%'
     }
     return <div className='ui' style={Center}> <Gallery /></div>
   }

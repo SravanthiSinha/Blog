@@ -22,11 +22,11 @@ class Gallery extends React.Component {
         imagesrc: '18839377_1356021807817368_4288779844940887709_n.jpg'
       },
       {
-        value: 'LA DOWNTOWN',
+        value: 'Los Angeles Downtown',
         imagesrc: '20228274_1402611466491735_8346949456250882495_n.jpg'
       },
       {
-        value: 'LA COMICON 2017',
+        value: 'Los Angeles Comicon 2017',
         imagesrc: '22852189_1495125540573660_7110521531382738438_n.jpg'
       },
       {
@@ -66,7 +66,7 @@ class Gallery extends React.Component {
       <StackGrid
         columnWidth='33%'
         monitorImagesLoaded
-        
+
       >
         {albums}
       </StackGrid>
