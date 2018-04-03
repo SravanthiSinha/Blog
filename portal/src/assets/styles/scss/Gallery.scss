@@ -1,0 +1,9 @@
+.StackGrid{
+  columnWidth:'33%'
+}
+
+@media (max-width: 767px) {
+  .StackGrid{
+    columnWidth:'100%'
+  }
+}
