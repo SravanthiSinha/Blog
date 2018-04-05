@@ -1,9 +1,32 @@
-.StackGrid{
-  columnWidth:'33%'
+.StackGrid {
+  columnWidth: '33%';
+}
+@media (max-width: 767px) {
+  .StackGrid {
+    columnWidth: '100%';
+  }
 }
 
-@media (max-width: 767px) {
-  .StackGrid{
-    columnWidth:'100%'
-  }
+.gallery {
+  width: 100%;
+  padding: 80px 2% 2%;
+  float: left;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.images_container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  max-height: 600px;
+}
+
+.images_container img {
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+  max-height: 600px;
 }

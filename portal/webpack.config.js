@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 //const ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,22 +12,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({title: 'Holberton School webpack', template: './src/index.html'}),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
-    new webpack.optimize.DedupePlugin(), //dedupe similar code
-    new webpack.optimize.UglifyJsPlugin(), //minify everything
-    new webpack.optimize.AggressiveMergingPlugin(),//Merge chunks
-    new CompressionPlugin({ // this is the new code you have to add
-      asset: "[path].gz[query]",
-      algorithm: "gzip",
-      test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.8
-    })
+    new webpack.HotModuleReplacementPlugin()
   ],
   watchOptions: {
     poll: 1000
@@ -38,7 +22,7 @@ module.exports = {
     hot: true
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -57,11 +41,7 @@ module.exports = {
         test: /\.(png|jp(e*)g|svg|gif|ico)$/,
         use: [
           {
-            loader: 'url-loader',
-            options: {
-              limit: 8000, // Convert images < 8kb to base64 strings
-              name: 'images/[hash]-[name].[ext]'
-            }
+            loader: 'url-loader'
           }
         ]
       }
