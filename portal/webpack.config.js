@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 //const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -12,17 +13,23 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({title: 'Holberton School webpack', template: './src/index.html'}),
-    new webpack.HotModuleReplacementPlugin()
-  ],
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
+   ],
   watchOptions: {
     poll: 1000
   },
   devServer: {
     contentBase: './dist',
-    hot: true
+      hot: true,
+      disableHostCheck: true
   },
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.js$/,
         loader: 'babel-loader',

@@ -50,7 +50,9 @@ class Album extends React.Component {
         onMouseEnter={this.onMouseover.bind(this)}
         onMouseLeave={this.onMouseout.bind(this)}
       >
-        <Link to='/gallery'>
+        <Link
+          to={'/gallery/' + this.props.category + '/' + this.props.albumname}
+        >
           <img src={this.props.image} style={this.state.imageStyle} />
           <div style={this.state.textStyle}>
             {this.props.value}
@@ -63,7 +65,9 @@ class Album extends React.Component {
 
 Album.propTypes = {
   value: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  albumname: PropTypes.string.isRequired
 }
 
 export default Album
