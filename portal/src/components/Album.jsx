@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
+import Gallery from './Gallery.jsx'
+
 class Album extends React.Component {
   constructor () {
     super()
@@ -51,7 +53,9 @@ class Album extends React.Component {
         onMouseLeave={this.onMouseout.bind(this)}
       >
         <Link
-          to={'/gallery/' + this.props.category + '/' + this.props.albumname}
+          to={
+            '/gallery/' + this.props.categoryname + '/' + this.props.albumname
+          }
         >
           <img src={this.props.image} style={this.state.imageStyle} />
           <div style={this.state.textStyle}>
@@ -66,7 +70,7 @@ class Album extends React.Component {
 Album.propTypes = {
   value: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  categoryname: PropTypes.string.isRequired,
   albumname: PropTypes.string.isRequired
 }
 

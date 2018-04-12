@@ -1,7 +1,8 @@
 import React from 'react'
-import '../assets/styles/scss/AboutMe.scss'
 import { SocialIcons, SocialIcon } from 'react-social-icons'
-import { Link } from 'react-router-dom'
+
+import '../assets/styles/scss/AboutMe.scss'
+
 class AboutMe extends React.Component {
   noOpen (e) {
     e.preventDefault()

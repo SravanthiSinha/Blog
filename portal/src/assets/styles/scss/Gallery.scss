@@ -6,6 +6,7 @@
     columnWidth: '100%';
   }
 }
+
 .gallery {
   width: 100%;
   padding: 80px 2% 2%;
@@ -24,7 +25,7 @@
 .images_container img {
   display: block;
   height: auto;
-  max-height: 680px;
+  max-height: calc(100vh - 120px);
 }
 
 main {

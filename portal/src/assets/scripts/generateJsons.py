@@ -15,7 +15,7 @@ def getFilesSources(path, category, album):
     return [category + '/' + album + '/' + d for d in os.listdir(path) if os.path.isfile(os.path.join(path, d))]
 
 
-pathToCategories = '../images/categories'
+pathToImagesCategories = '../images/categories'
 categories = json.load(open('../data/categories.json'))["categories"]
 
 dirPath = "../data/categories"
@@ -28,12 +28,12 @@ files = dict()
 
 
 for category in categories:
-    albums[category] = getFolders(pathToCategories + '/' + category)
+    albums[category] = getFolders(pathToImagesCategories + '/' + category)
 
 for category in categories:
     for album in albums[category]:
         files[album] = getFilesSources(
-            pathToCategories + '/' + category + '/' + album, category, album)
+            pathToImagesCategories + '/' + category + '/' + album, category, album)
 
 
 for category in categories:

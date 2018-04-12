@@ -6,20 +6,20 @@ $borderHighlight: #565454;
 $minHeight: 80px;
 
 .navbar-fixed-top {
-    min-height: $minHeight;
+  min-height: $minHeight;
 }
 
 .navbar-nav > li > a {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    line-height: $minHeight;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: $minHeight;
 }
-
 @media (max-width: 767px) {
-    .navbar-nav > li > a {
+  .navbar-nav > li > a {
     line-height: 20px;
     padding-top: 10px;
-    padding-bottom: 10px;}
+    padding-bottom: 10px;
+  }
 }
 
 .navbar-default {
@@ -29,6 +29,7 @@ $minHeight: 80px;
   .navbar-brand {
     color: $colHighlight;
     font-weight: bolder;
+
     &:hover {
       color: $colDefault;
       background-color: $bgDefault;

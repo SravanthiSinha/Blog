@@ -23,8 +23,6 @@ export function fetchAlbums (categoryname) {
 export function fetchGallery (categoryname, albumname) {
   return dispatch => {
     dispatch({ type: 'FETCHING', is_fetching: true })
-    console.log(albumname)
-    console.log(categoryname)
     if (categoryname != undefined && albumname != undefined) {
       const albums = require(
         '../assets/data/categories/' + categoryname + '.json'

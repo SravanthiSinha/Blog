@@ -2,10 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import '../assets/styles/scss/Gallery.scss'
-
 import { fetchGallery } from '../actions/Actions.jsx'
 
+import '../assets/styles/scss/Gallery.scss'
 class Gallery extends React.Component {
   constructor (props) {
     super(props)

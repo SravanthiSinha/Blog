@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-
 import sizeMe from 'react-sizeme'
 import StackGrid from 'react-stack-grid'
 
@@ -13,27 +12,24 @@ import Album from './Album.jsx'
 class Category extends React.Component {
   constructor (props) {
     super(props)
-    this._catname = ''
   }
   componentDidMount () {
-    this._catname = this.props.match.params.categoryname
-    this.props.fetchAlbums(this._catname)
+    this.props.fetchAlbums(this.props.match.params.categoryname)
   }
   componentDidUpdate () {
-    this._catname = this.props.match.params.categoryname
-    this.props.fetchAlbums(this._catname)
+    this.props.fetchAlbums(this.props.match.params.categoryname)
   }
   render () {
     if (this.props.is_fetching) {
       return <Loader is_loading={this.props.is_fetching} />
     } else {
-      const category = this._catname
+      const categoryname = this.props.match.params.categoryname
       const albums = this.props.albums.map(function (item) {
         return (
           <div key={item.name}>
             <Album
               value={item.name}
-              category={category}
+              categoryname={categoryname}
               albumname={item.name}
               image={require(`../assets/images/categories/${item.poster}`)}
             />

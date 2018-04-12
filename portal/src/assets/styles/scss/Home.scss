@@ -14,7 +14,7 @@
   height: 100%;
   margin: 0;
   overflow: hidden;
-  max-height: 680px;
+  max-height: calc(100vh - 120px);
   background-position: center center;
   background-size: cover;
 }
