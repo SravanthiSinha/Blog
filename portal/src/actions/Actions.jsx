@@ -7,7 +7,9 @@ export function fetchAlbums (categoryname) {
   return dispatch => {
     dispatch({ type: 'FETCHING', is_fetching: true })
     if (categoryname != undefined) {
-      const albums = require('../assets/data/' + categoryname + '.json')
+      const albums = require(
+        '../assets/data/categories/' + categoryname + '.json'
+      )
       return dispatch({
         type: 'RECEIVED_ALBUMS',
         is_fetching: false,
@@ -24,7 +26,9 @@ export function fetchGallery (categoryname, albumname) {
     console.log(albumname)
     console.log(categoryname)
     if (categoryname != undefined && albumname != undefined) {
-      const albums = require('../assets/data/' + categoryname + '.json').albums
+      const albums = require(
+        '../assets/data/categories/' + categoryname + '.json'
+      ).albums
       for (var i = 0; i < albums.length; i++) {
         if (albums[i].name == albumname) {
           var gallery = albums[i].files

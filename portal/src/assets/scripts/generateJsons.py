@@ -18,6 +18,11 @@ def getFilesSources(path, category, album):
 pathToCategories = '../images/categories'
 categories = json.load(open('../data/categories.json'))["categories"]
 
+dirPath = "../data/categories"
+fileList = os.listdir(dirPath)
+for fileName in fileList:
+ os.remove(dirPath+"/"+fileName)
+
 albums = dict()
 files = dict()
 
@@ -42,6 +47,6 @@ for category in categories:
         dat_album['poster'] = [k for k in files[album] if 'cover' in k][0]
         dat_album_array.append(dat_album)
     datum['albums'] = dat_album_array
-    with open('../data/' + category + '.json', 'w') as outfile:
+    with open('../data/categories/' + category + '.json', 'w') as outfile:
         json.dump(datum, outfile, sort_keys=False,
                   indent=4, separators=(',', ': '))

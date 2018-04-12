@@ -1,12 +1,14 @@
 import React from 'react'
-import Album from './Album.jsx'
-import sizeMe from 'react-sizeme'
-import StackGrid from 'react-stack-grid'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+
+import sizeMe from 'react-sizeme'
+import StackGrid from 'react-stack-grid'
+
 import { fetchAlbums } from '../actions/Actions.jsx'
 import Loader from './Loader.jsx'
+import Album from './Album.jsx'
 
 class Category extends React.Component {
   constructor (props) {
